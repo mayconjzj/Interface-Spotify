@@ -27,16 +27,12 @@ export type AlbumCardRootProps = ComponentProps<'a'> &
 export function AlbumCardRoot({
   children,
   variant,
-  title,
   className,
-  authors,
   ...props
 }: AlbumCardRootProps) {
   return (
     <a className={AlbumCardRootVariants({ variant, className })} {...props}>
       {children}
-      {title && <strong className="font-semibold">{title}</strong>}
-      {authors && <span className="text-sm text-zinc-500">{authors}</span>}
       {(!variant || variant === 'albumCard') && (
         <Button variant="secundary" rounded="full">
           <Play fill="bg-black" />
